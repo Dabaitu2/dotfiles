@@ -8,8 +8,8 @@ It includes:
   - [tmux.conf](./dotfiles/tmux/.tmux.conf)
   - [tmux.conf.local](./dotfiles/tmux/.tmux.conf)
 - alarcritty configurantions
-  - [alacritty.yml](./config/alacritty.yml)
+  - [alacritty.yml](./dotfiles/config/alacritty.yml)
 - neovim configurations
-  - [lua configurations](./nvim/init.lua)
-  - [coc-nvim configs](./config/nvim/coc-settings.json)
+  - [lua configurations](./dotfiles/nvim/init.lua)
+  - [coc-nvim configs](./dotfiles/config/nvim/coc-settings.json)
 
