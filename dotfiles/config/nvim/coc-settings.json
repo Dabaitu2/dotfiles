@@ -1,0 +1,84 @@
+{
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.infoSign": "",
+  "diagnostic.errorSign": "",
+  "diagnostic.displayByAle": false,
+  "diagnostic.virtualText": false,
+  "hover.target": "float",
+  "hover.floatConfig": {
+    "border": true
+  },
+  "diagnostic.enable": true,
+  "diagnostic.floatConfig": {
+    "border": true
+  },
+  "python.pythonPath": "python3",
+  "coc.preferences.formatOnType": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "suggest.autoTrigger": "always",
+  "rust-analyzer.updates.channel": "stable",
+  "eslint.packageManager": "pnpm",
+  "eslint.format.enable": true,
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+  "java.completion.overwrite": true,
+  "stylelintplus.autoFixOnSave": true,
+  "stylelintplus.autoFixOnFormat": true,
+  "stylelintplus.enable": true,
+  "stylelintplus.trace.server": "verbose",
+  "stylelintplus.validateOnType": true,
+  "stylua.styluaPath": "/Users/tomokokawase/.cargo/bin/stylua",
+  "coc.preferences.formatOnSaveFiletypes": ["lua"],
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "languageserver": {
+    "racket": {
+      "command": "racket",
+      "args": ["-l", "racket-langserver"],
+      "filetypes": ["scheme", "racket", "rkt"]
+    },
+    "ds-pinyin": {
+      "command": "/Users/tomokokawase/.cargo/bin/ds-pinyin-lsp",
+      "filetypes": ["*"],
+      "initializationOptions": {
+        "db_path": "/Users/tomokokawase/pinyin_source/dict.db3",
+        "completion_on": true,
+        "completion_around_mode": true,
+        "completion_trigger_characters": ">",
+        "show_symbols": true,
+        "show_symbols_only_follow_by_hanzi": true,
+        "show_symbols_by_n_times": 0,
+        "match_as_same_as_input": true,
+        "match_long_input": true,
+        "max_suggest": 50
+      }
+    }
+  },
+  "coc.source.omni.filetypes": ["org"],
+  "suggest.completionItemKindLabels": {
+    "method": "  ",
+    "function": "  ",
+    "variable": "[]",
+    "field": "  ",
+    "typeParameter": "<>",
+    "constant": "  ",
+    "class": " פּ ",
+    "interface": " 蘒",
+    "struct": "  ",
+    "event": "  ",
+    "operator": "  ",
+    "module": "  ",
+    "property": "  ",
+    "enum": " 練",
+    "reference": "  ",
+    "keyword": "  ",
+    "file": "  ",
+    "folder": " ﱮ ",
+    "color": "  ",
+    "unit": " 塞 ",
+    "snippet": "  ",
+    "text": "  ",
+    "constructor": "  ",
+    "value": "  ",
+    "enumMember": "  "
+  }
+}

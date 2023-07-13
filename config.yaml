@@ -1,0 +1,28 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  f_tmux.conf:
+    src: tmux/.tmux.conf
+    dst: ~/.tmux/.tmux.conf
+  f_tmux.conf.local:
+    src: tmux/.tmux.conf.local
+    dst: ~/.tmux/.tmux.conf.local
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+profiles:
+  MacBook-Pro.local:
+    dotfiles:
+    - d_alacritty
+    - d_nvim
+    - f_tmux.conf
+    - f_tmux.conf.local
+    - f_zshrc
