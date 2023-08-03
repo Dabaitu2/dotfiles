@@ -66,31 +66,30 @@ lualine.setup({
     },
   },
   winbar = {
-    lualine_b = {
-      {
-        'filename',
-        separator = { left = '', right = '' },
-        padding = { left = 4, right = 1 },
-        -- color = function()
-        -- return { bg = 'NONE', fg = '#7E7F80' }
-        -- end,
-        icon,
-      },
-    },
-    lualine_c = { { breadcrumbs, separator = nil } },
+    -- lualine_b = {
+    --   -- {
+    --   --   'filename',
+    --   --   separator = { left = '', right = '' },
+    --   --   padding = { left = 4, right = 0 },
+    --   --   color = function()
+    --   --     return { bg = 'NONE', fg = '#7E7F80' }
+    --   --   end,
+    --   --   -- icon,
+    -- },
+    -- lualine_c = { { breadcrumbs, separator = nil } },
   },
   inactive_winbar = {
-    lualine_b = {
-      {
-        'filename',
-        separator = { left = '', right = '' },
-        padding = { left = 4, right = 1 },
-        color = function()
-          -- return { bg = 'NONE', fg = '#7E7F80' }
-        end,
-        icon,
-      },
-    },
-    lualine_c = { { breadcrumbs, separator = nil } },
+    -- lualine_b = {
+    --   {
+    --     'filename',
+    --     separator = { left = '', right = '' },
+    --     padding = { left = 4, right = 1 },
+    --     color = function()
+    --       -- return { bg = 'NONE', fg = '#7E7F80' }
+    --     end,
+    --     icon,
+    --   },
+    -- },
+    -- lualine_c = { { breadcrumbs, separator = nil } },
   },
 })

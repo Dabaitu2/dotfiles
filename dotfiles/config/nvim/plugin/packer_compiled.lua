@@ -257,13 +257,12 @@ _G.packer_plugins = {
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    config = { "\27LJ\2\n©\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\26override_by_extension\brkt\1\0\0\1\0\3\ticon\aÎ»\tname\vRacket\ncolor\f#9d10b0\1\0\2\fdefault\2\vstrict\2\nsetup\22nvim-web-devicons\frequire\0" },
     loaded = true,
     path = "/Users/tomokokawase/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   orgmode = {
-    config = { "\27LJ\2\nå\a\0\0\5\0\22\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\3=\3\17\0025\3\19\0005\4\18\0=\4\20\3=\3\21\2B\0\2\1K\0\1\0\rmappings\borg\1\0\0\1\0\1\24org_toggle_checkbox\n<C-t>\26org_capture_templates\6n\1\0\3\vtargetF~/Library/Mobile Documents/com~apple~CloudDocs/org/quicknotes.org\16description\15Quick Note\rtemplate\v* %u%?\6s\1\0\3\vtargetE~/Library/Mobile Documents/com~apple~CloudDocs/org/resources.org\16description\rResource\rtemplate\17* [[%x][%?]]\6r\1\0\0\1\0\3\vtargetA~/Library/Mobile Documents/com~apple~CloudDocs/org/repos.org\16description\tRepo\rtemplate9* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?\27org_todo_keyword_faces\1\0\3\fPENDING$:foreground orange :weight bold\nDELAY(:background #000000 :foreground red\vCLOSED\":foreground gray :weight bold\22org_todo_keywords\1\b\0\0\fTODO(t)\15PENDING(p)\15INPROGRESS\rDELAY(w)\6|\fDONE(d)\14CLOSED(c)\21org_agenda_files\1\0\1\27org_default_notes_fileB~/Library/Mobile Documents/com~apple~CloudDocs/org/refile.org\1\3\0\0009~/Library/Mobile Documents/com~apple~CloudDocs/org/*\25~/learn-orgmode/**/*\nsetup\forgmode\frequire\0" },
+    config = { "\27LJ\2\næ\a\0\0\5\0\22\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\3=\3\17\0025\3\19\0005\4\18\0=\4\20\3=\3\21\2B\0\2\1K\0\1\0\rmappings\borg\1\0\0\1\0\1\24org_toggle_checkbox\n<C-t>\26org_capture_templates\6n\1\0\3\16description\15Quick Note\vtargetF~/Library/Mobile Documents/com~apple~CloudDocs/org/quicknotes.org\rtemplate\v* %u%?\6s\1\0\3\16description\rResource\vtargetE~/Library/Mobile Documents/com~apple~CloudDocs/org/resources.org\rtemplate\17* [[%x][%?]]\6r\1\0\0\1\0\3\16description\tRepo\vtargetA~/Library/Mobile Documents/com~apple~CloudDocs/org/repos.org\rtemplate9* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?\27org_todo_keyword_faces\1\0\3\nDELAY(:background #000000 :foreground red\vCLOSED\":foreground gray :weight bold\fPENDING$:foreground orange :weight bold\22org_todo_keywords\1\b\0\0\fTODO(t)\16POSTPONE(p)\15INPROGRESS\rDELAY(w)\6|\fDONE(d)\14CLOSED(c)\21org_agenda_files\1\0\1\27org_default_notes_fileB~/Library/Mobile Documents/com~apple~CloudDocs/org/refile.org\1\3\0\0009~/Library/Mobile Documents/com~apple~CloudDocs/org/*\25~/learn-orgmode/**/*\nsetup\forgmode\frequire\0" },
     loaded = true,
     path = "/Users/tomokokawase/.local/share/nvim/site/pack/packer/start/orgmode",
     url = "https://github.com/nvim-orgmode/orgmode"
@@ -407,26 +406,22 @@ time([[Defining packer_plugins]], false)
 time([[Config for ChatGPT.nvim]], true)
 try_loadstring("\27LJ\2\nc\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\18openai_params\1\0\0\1\0\1\15max_tokens\3è\a\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
 time([[Config for ChatGPT.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
+-- Config for: orgmode
+time([[Config for orgmode]], true)
+try_loadstring("\27LJ\2\næ\a\0\0\5\0\22\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\3=\3\17\0025\3\19\0005\4\18\0=\4\20\3=\3\21\2B\0\2\1K\0\1\0\rmappings\borg\1\0\0\1\0\1\24org_toggle_checkbox\n<C-t>\26org_capture_templates\6n\1\0\3\16description\15Quick Note\vtargetF~/Library/Mobile Documents/com~apple~CloudDocs/org/quicknotes.org\rtemplate\v* %u%?\6s\1\0\3\16description\rResource\vtargetE~/Library/Mobile Documents/com~apple~CloudDocs/org/resources.org\rtemplate\17* [[%x][%?]]\6r\1\0\0\1\0\3\16description\tRepo\vtargetA~/Library/Mobile Documents/com~apple~CloudDocs/org/repos.org\rtemplate9* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?\27org_todo_keyword_faces\1\0\3\nDELAY(:background #000000 :foreground red\vCLOSED\":foreground gray :weight bold\fPENDING$:foreground orange :weight bold\22org_todo_keywords\1\b\0\0\fTODO(t)\16POSTPONE(p)\15INPROGRESS\rDELAY(w)\6|\fDONE(d)\14CLOSED(c)\21org_agenda_files\1\0\1\27org_default_notes_fileB~/Library/Mobile Documents/com~apple~CloudDocs/org/refile.org\1\3\0\0009~/Library/Mobile Documents/com~apple~CloudDocs/org/*\25~/learn-orgmode/**/*\nsetup\forgmode\frequire\0", "config", "orgmode")
+time([[Config for orgmode]], false)
 -- Config for: twilight.nvim
 time([[Config for twilight.nvim]], true)
 try_loadstring("\27LJ\2\nJ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nalpha\4\0€€Àþ\3\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
 time([[Config for twilight.nvim]], false)
--- Config for: orgmode
-time([[Config for orgmode]], true)
-try_loadstring("\27LJ\2\nå\a\0\0\5\0\22\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\3=\3\17\0025\3\19\0005\4\18\0=\4\20\3=\3\21\2B\0\2\1K\0\1\0\rmappings\borg\1\0\0\1\0\1\24org_toggle_checkbox\n<C-t>\26org_capture_templates\6n\1\0\3\vtargetF~/Library/Mobile Documents/com~apple~CloudDocs/org/quicknotes.org\16description\15Quick Note\rtemplate\v* %u%?\6s\1\0\3\vtargetE~/Library/Mobile Documents/com~apple~CloudDocs/org/resources.org\16description\rResource\rtemplate\17* [[%x][%?]]\6r\1\0\0\1\0\3\vtargetA~/Library/Mobile Documents/com~apple~CloudDocs/org/repos.org\16description\tRepo\rtemplate9* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?\27org_todo_keyword_faces\1\0\3\fPENDING$:foreground orange :weight bold\nDELAY(:background #000000 :foreground red\vCLOSED\":foreground gray :weight bold\22org_todo_keywords\1\b\0\0\fTODO(t)\15PENDING(p)\15INPROGRESS\rDELAY(w)\6|\fDONE(d)\14CLOSED(c)\21org_agenda_files\1\0\1\27org_default_notes_fileB~/Library/Mobile Documents/com~apple~CloudDocs/org/refile.org\1\3\0\0009~/Library/Mobile Documents/com~apple~CloudDocs/org/*\25~/learn-orgmode/**/*\nsetup\forgmode\frequire\0", "config", "orgmode")
-time([[Config for orgmode]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-try_loadstring("\27LJ\2\n©\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\26override_by_extension\brkt\1\0\0\1\0\3\ticon\aÎ»\tname\vRacket\ncolor\f#9d10b0\1\0\2\fdefault\2\vstrict\2\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
-time([[Config for nvim-web-devicons]], false)
 -- Config for: marks.nvim
 time([[Config for marks.nvim]], true)
 try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmarks\frequire\0", "config", "marks.nvim")
 time([[Config for marks.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

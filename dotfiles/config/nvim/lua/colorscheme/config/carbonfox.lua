@@ -1,6 +1,6 @@
 require('nightfox').setup({
   options = {
-    -- transparent = true,
+    transparent = true,
     inverse = {
       -- match_paren = true,
       visual = true,

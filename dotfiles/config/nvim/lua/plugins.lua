@@ -123,7 +123,15 @@ packer.startup({
         require('orgmode').setup({
           org_agenda_files = { [[~/Library/Mobile Documents/com~apple~CloudDocs/org/*]], '~/learn-orgmode/**/*' },
           org_default_notes_file = [[~/Library/Mobile Documents/com~apple~CloudDocs/org/refile.org]],
-          org_todo_keywords = { 'TODO(t)', 'PENDING(p)', 'INPROGRESS', 'DELAY(w)', '|', 'DONE(d)', 'CLOSED(c)' },
+          org_todo_keywords = {
+            'TODO(t)',
+            'POSTPONE(p)',
+            'INPROGRESS',
+            'DELAY(w)',
+            '|',
+            'DONE(d)',
+            'CLOSED(c)',
+          },
           org_todo_keyword_faces = {
             PENDING = ':foreground orange :weight bold',
             CLOSED = ':foreground gray :weight bold',
