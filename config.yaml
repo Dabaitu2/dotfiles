@@ -18,6 +18,9 @@ dotfiles:
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
+  f_x.txt:
+    src: x.txt
+    dst: ~/x.txt
 profiles:
   MacBook-Pro.local:
     dotfiles:
@@ -26,3 +29,4 @@ profiles:
     - f_tmux.conf
     - f_tmux.conf.local
     - f_zshrc
+    - f_x.txt

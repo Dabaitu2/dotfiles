@@ -1,6 +1,7 @@
 -- pcall 在 lua 中用于捕获错误, .. 用于链接两个字符串
 -- local colorscheme = 'tokyonight'
-local colorscheme = 'carbonfox'
+-- local colorscheme = 'carbonfox'
+local colorscheme = 'catppuccin'
 local colorscheme_config = 'colorscheme.config.' .. colorscheme
 
 -- 尝试加载配置

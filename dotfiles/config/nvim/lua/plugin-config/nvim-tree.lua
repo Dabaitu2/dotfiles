@@ -156,6 +156,13 @@ vim.cmd([[highlight NvimTreeGitNew guifg=#F77669]])
 vim.cmd([[highlight NvimTreeGitDirty guifg=#F77669]])
 vim.cmd([[highlight NvimTreeGitStaged guifg=#C3E887]])
 vim.cmd([[highlight NvimTreeExecFile guifg=default]])
+vim.cmd([[highlight NvimTreeFolderIcon guifg=#3D4153]])
+vim.cmd([[highlight NvimTreeOpenedFolderIcon guifg=#6EAFA8]])
+vim.cmd([[highlight NvimTreeFolderName guifg=#787C99]])
+vim.cmd([[highlight NvimTreeEmptyFolderName guifg=#787C99]])
+-- vim.cmd([[highlight NvimTreeOpenedFolderName guifg=default]])
+vim.cmd([[highlight NvimTreeFileName guifg=#787C99]])
+
 vim.g.nvim_tree_show_icons = {
   git = 3,
   folders = 1,

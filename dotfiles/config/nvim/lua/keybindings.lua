@@ -452,12 +452,13 @@ pluginKeys.mapCoc = function()
       vim.keymap.set('n', 'gtj', [[:call CocAction('runCommand', 'go.tags.add', 'json')<CR>]], reopt)
       vim.keymap.set('n', 'gtt', [[:call CocAction('runCommand', 'go.tags.add', 'thrift')<CR>]], reopt)
       vim.keymap.set('n', 'gtc', [[:call CocAction('runCommand', 'go.tags.clear')<CR>]], reopt)
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        pattern = '*.go',
-        callback = function()
-          vim.api.nvim_command([[:silent call CocAction('runCommand', 'editor.action.organizeImport')]])
-        end,
-      })
+      vim.keymap.set('n', '<leader>r', [[:!go run %<CR>]], reopt)
+      -- vim.api.nvim_create_autocmd('BufWritePre', {
+      --   pattern = '*.go',
+      --   callback = function()
+      --     vim.api.nvim_command([[:silent call CocAction('runCommand', 'editor.action.organizeImport')]])
+      --   end,
+      -- })
     end,
   })
 end
