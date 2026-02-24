@@ -6,7 +6,7 @@ end
 
 zenMode.setup({
   window = { 
-    height = 0.95,
+    height = 1,
     options = {
       list = false
     }
@@ -16,7 +16,6 @@ zenMode.setup({
       enable = true
     }
   }
-
 })
 
 require("keybindings").mapZenMode()

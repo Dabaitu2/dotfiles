@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 
@@ -7,7 +8,7 @@ local opt = { noremap = true, silent = true }
 local reopt = { noremap = false, silent = true }
 
 map('i', 'jj', '<ESC>', opt)
-map('n', '<C-s>', ':w<CR>', opt)
+map('n', '<C-s>', ':w!<CR>', opt)
 -- windows 分屏快捷键
 map('n', 'sv', ':vsp<CR>', opt)
 map('n', 'sh', ':sp<CR>', opt)
@@ -110,10 +111,6 @@ map('n', '<leader>b', ':Telescope buffers<CR>', opt)
 map('n', '<leader>s', ':Telescope grep_string<CR>', opt)
 map('n', '<leader>m', ':Telescope marks<CR>', opt)
 
--- ChatGPT
--- 打开窗口
-map('n', '<leader>c', ':ChatGPT<CR>', opt)
-
 -- nvim Tree
 vim.keymap.set('n', '<leader>mn', require('nvim-tree.api').marks.navigate.next)
 vim.keymap.set('n', '<leader>mp', require('nvim-tree.api').marks.navigate.prev)
@@ -158,135 +155,6 @@ pluginKeys.telescopeList = {
   },
 }
 
--- LSP 跳转相关 keybindings
-pluginKeys.mapLSP = function(mapbuf)
-  -- rename
-  --[[
-  Lspsaga 替换 rn
-  mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
-  --]]
-  mapbuf('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opt)
-  -- code action
-  -- Lspsaga 替换 ca
-  -- mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
-  mapbuf('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opt)
-  -- go xx
-  -- mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
-  mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-  --[[
-  Lspsaga 替换 gh
-  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-  --]]
-  mapbuf('n', 'gh', '<cmd>Lspsaga hover_doc<cr>', opt)
-  -- mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-  --[[
-  Lspsaga 替换 gr
-  mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
-  --]]
-  mapbuf('n', 'gr', '<cmd>Lspsaga lsp_finder<CR>', opt)
-  --[[
-  Lspsaga 替换 gp, gj, gk
-  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-  mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-  --]]
-  -- diagnostic
-  mapbuf('n', 'gi', '<cmd>Lspsaga show_line_diagnostics<CR>', opt)
-  mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', opt)
-  mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opt)
-  mapbuf('n', '<A-f>', '<cmd>lua vim.lsp.buf.formatting({ timeout_ms = 2000 })<CR>', opt)
-  -- 未用
-  -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
-  -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
-  -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
-  -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
-  -- mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
-  -- mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
-  -- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)end
-end
-
-pluginKeys.mapTsLSP = function(mapbuf)
-  mapbuf('n', '<leader>s', ':TSLspOrganize<CR>', opt)
-  mapbuf('n', '<leader>r', ':TSLspRenameFile<CR>', opt)
-  mapbuf('n', '<leader>i', ':TSLspImportAll<CR>', opt)
-end
-
-pluginKeys.mapRustLSP = function(mapbuf)
-  mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-end
-
--- nvim-cmp 自动补全
-pluginKeys.cmp = function(cmp)
-  local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
-  end
-
-  local feedkey = function(key, mode)
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-  end
-
-  return {
-    -- 出现补�������������������������������������
-    ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    -- 取消
-    ['<A-,>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    -- 上一个
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
-    -- 下一个
-    ['<C-j>'] = cmp.mapping.select_next_item(),
-    -- 确认
-    ['<CR>'] = cmp.mapping.confirm({
-      select = true,
-      behavior = cmp.ConfirmBehavior.Replace,
-    }),
-    -- 如果窗口内容太多，可以滚动
-    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-
-    -- 自定义代码段跳转到下一个参数
-    ['<C-l>'] = cmp.mapping(function(_)
-      if vim.fn['vsnip#available'](1) == 1 then
-        feedkey('<Plug>(vsnip-expand-or-jump)', '')
-      end
-    end, { 'i', 's' }),
-
-    -- 自定义代码段跳转到上一个参数
-    ['<C-h>'] = cmp.mapping(function()
-      if vim.fn['vsnip#jumpable'](-1) == 1 then
-        feedkey('<Plug>(vsnip-jump-prev)', '')
-      end
-    end, { 'i', 's' }),
-
-    -- Super Tab
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif vim.fn['vsnip#available'](1) == 1 then
-        feedkey('<Plug>(vsnip-expand-or-jump)', '')
-      elseif has_words_before() then
-        -- 如果前面有文本也会尝试 Tab 补全
-        cmp.complete()
-      else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-      end
-    end, { 'i', 's' }),
-
-    ['<S-Tab>'] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-        feedkey('<Plug>(vsnip-jump-prev)', '')
-      end
-    end, { 'i', 's' }),
-    -- end of super Tab
-  }
-end
-
 -- nvim-dap
 pluginKeys.mapDAP = function()
   -- 开始
@@ -322,14 +190,83 @@ end
 -- <leader>tc 下方
 -- 特殊lazygit 窗口，需要安装lazygit
 -- <leader>tg lazygit
+-- <leader>tn 新建 terminal
+-- <leader>tl 显示 terminal 列表
+-- <leader>ts 切换 terminal
 pluginKeys.mapToggleTerm = function(toggleterm)
   vim.keymap.set({ 'n', 't' }, '<leader>t', toggleterm.toggleC)
   vim.keymap.set({ 'n', 't' }, '<leader>ta', toggleterm.toggleA)
   vim.keymap.set({ 'n', 't' }, '<leader>tb', toggleterm.toggleB)
   vim.keymap.set({ 'n', 't' }, '<leader>tc', toggleterm.toggleC)
   vim.keymap.set({ 'n', 't' }, '<leader>tg', toggleterm.toggleG)
+  vim.keymap.set({ 'n', 't' }, '<leader>1t', toggleterm.toggleT1)
+  vim.keymap.set({ 'n', 't' }, '<leader>2t', toggleterm.toggleT2)
+  vim.keymap.set({ 'n', 't' }, '<leader>3t', toggleterm.toggleT3)
+
+  -- 新增功能
+  vim.keymap.set('n', '<leader>tn', function()
+    toggleterm.create_new_terminal({ direction = 'float' })
+  end, { desc = '新建浮动 Terminal' })
+
+  vim.keymap.set('n', '<leader>tl', function()
+    toggleterm.show_terminal_picker()
+  end, { desc = '显示 Terminal 列表' })
+
+  vim.keymap.set('n', '<leader>ts', function()
+    toggleterm.show_terminal_picker()
+  end, { desc = '切换 Terminal' })
+
+  -- 快速创建不同类型的 terminal
+  vim.keymap.set('n', '<leader>th', function()
+    toggleterm.create_new_terminal({ direction = 'horizontal' })
+  end, { desc = '新建水平 Terminal' })
+
+  vim.keymap.set('n', '<leader>tv', function()
+    toggleterm.create_new_terminal({ direction = 'vertical' })
+  end, { desc = '新建垂直 Terminal' })
+
+  -- 循环切换 terminal
+  vim.keymap.set('n', '<leader>tc', function()
+    toggleterm.cycle_terminals()
+  end, { desc = '循环切换 Terminal' })
+
+  vim.keymap.set('t', '<leader>tc', function()
+    toggleterm.cycle_terminals()
+  end, { desc = '循环切换 Terminal' })
+
+  -- 重命名当前 terminal
+  vim.keymap.set('n', '<leader>tr', function()
+    toggleterm.rename_current_terminal()
+  end, { desc = '重命名当前 Terminal' })
+
+  vim.keymap.set('t', '<leader>tr', function()
+    toggleterm.rename_current_terminal()
+  end, { desc = '重命名当前 Terminal' })
 end
 
+pluginKeys.mapNvimCmp = function()
+  local opts = { noremap = true, silent = true }
+
+  vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
+  vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+  vim.keymap.set('n', 'gr', '<cmd>Lspsaga finder<CR>')
+
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+
+  vim.keymap.set('n', '<leader>qf', vim.diagnostic.open_float)
+  vim.keymap.set('n', '<leader>k', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts)
+  -- vim.keymap.set('n', 'gk', vim.diagnostic.goto_prev, opts)
+  -- vim.keymap.set('n', 'gj', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+  vim.keymap.set('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+end
+
+-- @deprecated
 pluginKeys.mapCoc = function()
   local keyset = vim.keymap.set
   -- Auto complete
@@ -466,5 +403,13 @@ end
 pluginKeys.mapZenMode = function()
   vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 end
+
+pluginKeys.mapEasyAlign = function()
+  vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)')
+  vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
+end
+
+-- vim fugitive
+vim.keymap.set('n', '<leader>di', '[[:Git log -p -- %<CR>]]', reopt)
 
 return pluginKeys

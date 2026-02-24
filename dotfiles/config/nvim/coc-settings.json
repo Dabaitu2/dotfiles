@@ -1,7 +1,7 @@
 {
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.infoSign": "",
-  "diagnostic.errorSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.errorSign": "",
   "diagnostic.displayByAle": false,
   "diagnostic.virtualText": false,
   "hover.target": "float",
@@ -12,45 +12,76 @@
   "diagnostic.floatConfig": {
     "border": true
   },
+  "tsserver.maxTsServerMemory": 8092,
+  "tsserver.tsdk": "/Users/bytedance/Library/Application Support/fnm/node-versions/v16.20.1/installation/lib/node_modules/lib",
   "python.pythonPath": "python3",
-  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnType": false,
+  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
   "rust-analyzer.checkOnSave.command": "clippy",
   "suggest.autoTrigger": "always",
   "rust-analyzer.updates.channel": "stable",
-  "eslint.packageManager": "pnpm",
-  "eslint.format.enable": true,
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "java.format.settings.profile": "GoogleStyle",
-  "java.completion.overwrite": true,
-  "stylelintplus.autoFixOnSave": true,
-  "stylelintplus.autoFixOnFormat": true,
-  "stylelintplus.enable": true,
-  "stylelintplus.trace.server": "verbose",
-  "stylelintplus.validateOnType": true,
-  "stylua.styluaPath": "/Users/tomokokawase/.cargo/bin/stylua",
-  "coc.preferences.formatOnSaveFiletypes": ["lua"],
+  "stylua.styluaPath": "/Users/bytedance/.cargo/bin/stylua",
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.workspace.library": [
+    "~/private_projects/dummy-coder.nvim",
+    "~/.local/share/nvim/site/pack/packer/start"
+  ],
+  "coc.source.word.priority": 0,
+  "clangd.fallbackFlags": ["-std=c++11"],
   "languageserver": {
-    "racket": {
-      "command": "racket",
-      "args": ["-l", "racket-langserver"],
-      "filetypes": ["scheme", "racket", "rkt"]
+    "thrift": {
+      "filetypes": ["thrift"],
+      "args": ["-indent", "tab"],
+      "command": "/Users/bytedance/thriftls-darwin-amd64"
     },
     "ds-pinyin": {
-      "command": "/Users/tomokokawase/.cargo/bin/ds-pinyin-lsp",
+      "command": "/Users/bytedance/.cargo/bin/ds-pinyin-lsp",
       "filetypes": ["*"],
       "initializationOptions": {
-        "db_path": "/Users/tomokokawase/pinyin_source/dict.db3",
+        "db_path": "/Users/bytedance/dict.db3",
         "completion_on": true,
-        "completion_around_mode": true,
-        "completion_trigger_characters": ">",
         "show_symbols": true,
-        "show_symbols_only_follow_by_hanzi": true,
+        "show_symbols_only_follow_by_hanzi": false,
         "show_symbols_by_n_times": 0,
         "match_as_same_as_input": true,
         "match_long_input": true,
         "max_suggest": 50
       }
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
+      "filetypes": ["haskell", "lhaskell"],
+      "settings": {
+        "haskell": {
+          "checkParents": "CheckOnSave",
+          "checkProject": true,
+          "maxCompletions": 40,
+          "formattingProvider": "ormolu",
+          "plugin": {
+            "stan": { "globalOn": true }
+          }
+        }
+      }
+    },
+    "racket": {
+      "command": "racket",
+      "args": ["-l", "racket-langserver"],
+      "filetypes": ["scheme", "racket", "rkt"]
+    },
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
     }
   },
   "coc.source.omni.filetypes": ["org"],
@@ -59,23 +90,23 @@
     "function": "  ",
     "variable": "[]",
     "field": "  ",
-    "typeParameter": "<>",
-    "constant": "  ",
-    "class": " פּ ",
-    "interface": " 蘒",
+    "typeParameter": "  ",
+    "constant": "  ",
+    "class": "  ",
+    "interface": "  ",
     "struct": "  ",
     "event": "  ",
-    "operator": "  ",
-    "module": "  ",
+    "operator": "  ",
+    "module": "  ",
     "property": "  ",
-    "enum": " 練",
+    "enum": "  ",
     "reference": "  ",
-    "keyword": "  ",
+    "keyword": " 󰌋 ",
     "file": "  ",
     "folder": " ﱮ ",
     "color": "  ",
-    "unit": " 塞 ",
-    "snippet": "  ",
+    "unit": "  ",
+    "snippet": "  ",
     "text": "  ",
     "constructor": "  ",
     "value": "  ",

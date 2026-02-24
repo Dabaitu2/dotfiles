@@ -6,9 +6,12 @@ require('catppuccin').setup({
     treesitter = true,
     notify = false,
     mini = false,
+    dashboard = true,
+    coc_nvim = true
   },
   flavour = 'mocha',
-  transparent_background = true, -- disables setting the background color.
+  -- flavour = 'mocha',
+  -- transparent_background = true, -- disables setting the background color.
   styles = {
     comments = {},
   },

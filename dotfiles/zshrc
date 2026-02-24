@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -8,43 +6,53 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
+# OPENAI KEY
+export AVANTE_OPENAI_API_KEY="75827963-c49c-4bf8-9eba-c64859428fa9"
+# export OPENAI_API_KEY="75827963-c49c-4bf8-9eba-c64859428fa9"
+export TAVILY_API_KEY="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"
+# export AVANTE_OPENAI_API_KEY="sk-TIp3KXIZBd44YOvPD260553028F6490195D3Ec4c8664F6D6"
+# export OPENAI_API_KEY="sk-TIp3KXIZBd44YOvPD260553028F6490195D3Ec4c8664F6D6"
+
+# 优先使用 Homebrew 安装的工具
+export PATH="/opt/homebrew/bin:/usr/local/bin"
+export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# GO related
+export GOPATH="$HOME/go"
+# export GOROOT="/usr/local/go"
+export GOROOT="/Users/bytedance/go/go1.23.4"
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+
+
 # zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export POSTGRESQL_HOME=~/PostgreSQL/pg11/bin
 export GPG_TTY=$(tty)
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export GOPATH=/Users/tomokokawase/go
 export FLUTTER_INSTALL_PATH=~/flutter
 export RUST_SRC_PATH=~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/library
-export PATH=$PATH:$FLUTTER_INSTALL_PATH/flutter/bin
 export PATH=$PATH:~/tmux
-export PATH=$PATH:/usr/local/opt/python@3.9/bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:~/Downloads/doas-for-mac
-export PATH=$PATH:/bin:/usr/bin
 export PATH=$PATH:/usr/bin/strip
 export PATH=$PATH:$RUST_SRC_PATH
-export PATH=$PATH:~/wabt/bin
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:~/emsdk
-export PATH=$PATH:~/emsdk/node/12.9.1_64bit/bin
-export PATH=$PATH:~/emsdk/upstream/emscripten
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:/Applications/apache-tomcat-8.5.39/bin
-export PATH=$PATH:~/go/bin:$PATH
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/mysql/bin
-export PATH=$PATH:$POSTGRESQL_HOME
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/usr/local/lib/node_modules/bin
 export PATH=$PATH:~/Desktop/protobuf-3.9.1
-export PATH=$PATH:/Applications/Racket\ v8.7/bin
+export PATH=$PATH:/Applications/Racket\ v8.9/bin
+export PATH=$PATH:/opt/homebrew/Cellar
+export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:~/apache-maven-3.9.9/bin
+
+# java
+export JAVA_HOME=/Users/bytedance/Library/Java/JavaVirtualMachines/corretto-1.8.0_422/Contents/Home
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+
+# lua
+export PATH=$PATH:~/.luarocks/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/tomokokawase/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 export NODE_OPTIONS="--max-old-space-size=4096"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -52,10 +60,9 @@ export NODE_OPTIONS="--max-old-space-size=4096"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="ys"
 
-alias alacritty-colorscheme="/Users/tomokokawase/Library/Python/3.7/bin/alacritty-colorscheme"
 alias ys="yarn start"
 alias yb="yarn build"
-alias ls="exa"
+alias ls="eza"
 alias nv="nvim"
 alias jest="/usr/local/bin/jest"
 
@@ -95,8 +102,11 @@ zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
-zinit ice depth=1; 
-zinit light romkatv/powerlevel10k
+# Only load powerlevel10k if not in VSCode terminal
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+  zinit ice depth=1
+  zinit light romkatv/powerlevel10k
+fi
 
 zinit ice lucid wait='1'
 zsh-defer source ~/.nvm/nvm.sh --no-use
@@ -110,14 +120,44 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 alias k='kinit --keychain zhanghaoyang.tomoko@BYTEDANCE.COM'
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-[ -f "/Users/tomokokawase/.ghcup/env" ] && source "/Users/tomokokawase/.ghcup/env" # ghcup-env
+#[ -f "~/.ghcup/env" ] && source "~/.ghcup/env" # ghcup-env
 
 # pnpm
-export PNPM_HOME="/Users/tomokokawase/Library/pnpm"
+export PNPM_HOME="~/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-export OPENAI_API_KEY="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"
 # pnpm end
+
+# fnm
+eval "$(fnm env --use-on-cd)"
+
+[ -f "/Users/bytedance/.ghcup/env" ] && source "/Users/bytedance/.ghcup/env" # ghcup-env
+
+# bazel related config
+export BAZELISK_AUTO_CONFIG='true'
+
+. "$HOME/.local/bin/env"
+
+# direnv to automatically activate venv packages - optimized loading
+# Load direnv asynchronously to speed up shell startup
+eval "$(direnv hook zsh)"
+
+# Optimize direnv performance
+if [[ -z "$DIRENV_NO_SKIP_HOME" ]]; then
+  # Skip home directory to avoid unnecessary checks
+  # Initialize DIRENV_WATCHES if not set
+  if [[ -z "${DIRENV_WATCHES+set}" ]]; then
+    export DIRENV_WATCHES=()
+  fi
+  export DIRENV_WATCHES=(
+    "${DIRENV_WATCHES[@]}"
+    -~ # Exclude home directory
+  )
+fi
+
+# Reduce direnv verbosity and disable debug output
+export DIRENV_LOG_FORMAT=""
+
+# Cache environment variables for 5 minutes to reduce reloads
+export DIRENV_CACHE_TIME=300
+
+[[ -s "/Users/bytedance/.gvm/scripts/gvm" ]] && source "/Users/bytedance/.gvm/scripts/gvm"

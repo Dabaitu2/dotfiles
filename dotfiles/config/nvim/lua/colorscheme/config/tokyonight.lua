@@ -1,5 +1,6 @@
 require('tokyonight').setup({
   style = 'night',
+  -- style = 'storm',
   -- transparent = true,
   functions = {
     italic = true,
@@ -32,3 +33,4 @@ vim.cmd([[highlight rustTSInclude guifg=#bb9af7]])
 vim.cmd([[highlight CursorLine guibg=#1e202d]])
 vim.cmd([[highlight CursorLine guibg=#202020]])
 vim.cmd([[highlight CocRustTypeHint guibg=NONE guifg=#787878]])
+vim.api.nvim_set_hl(0, 'CocInlayHint', { fg = '#888888' })

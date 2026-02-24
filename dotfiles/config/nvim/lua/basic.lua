@@ -84,3 +84,15 @@ vim.o.showmode = false
 -- fix italics in tmux
 vim.cmd('set t_ZH=\\e[3m')
 vim.cmd('set t_ZR=\\e[23m')
+
+-- 文件过大时将 filetype 设置为空, 避免文件加载过慢
+vim.api.nvim_create_augroup('ChangeFileType', {})
+vim.api.nvim_create_autocmd('BufRead', {
+  group = 'ChangeFileType',
+  callback = function()
+    local fsize = vim.fn.getfsize(vim.fn.expand('%:p'))
+    if fsize > 1024 * 1024 * 5 then
+      vim.cmd(':set filetype=')
+    end
+  end,
+})

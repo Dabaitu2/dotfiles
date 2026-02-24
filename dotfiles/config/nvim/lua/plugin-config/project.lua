@@ -11,7 +11,7 @@ project.setup({
   respect_buf_cwd = true,
   detection_methods = { 'pattern' },
   -- to make sure we have our special project, we use specific suffix to identify that, which is .tomoko
-  patterns = { '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json', '.sln', '.tomoko', 'rush.json' },
+  patterns = { '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json', '.sln', '.tomoko', 'rush.json', 'yarn.lock', 'uv.lock' },
   exclude_dirs = { '~' },
 })
 

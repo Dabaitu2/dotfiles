@@ -1,4 +1,4 @@
-require('nightfox').setup({
+require('carbonfox').setup({
   options = {
     transparent = true,
     inverse = {

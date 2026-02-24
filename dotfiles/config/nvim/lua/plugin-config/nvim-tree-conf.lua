@@ -4,7 +4,6 @@ if not status then
   return
 end
 
-local list_keys = require('keybindings').nvimTreeList
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
 
@@ -84,6 +83,7 @@ nvim_tree.setup({
   on_attach = on_attach,
   renderer = {
     highlight_git = true,
+    highlight_opened_files = 'name',
     special_files = {},
     icons = {
       show = {
@@ -122,23 +122,13 @@ nvim_tree.setup({
     -- 也可以 'right'
     side = 'left',
     -- 隐藏根目录
-    hide_root_folder = false,
+    -- hide_root_folder = false,
     -- 自定义列表中快捷键
-    mappings = {
-      custom_only = false,
-      list = list_keys,
-    },
     -- 不显示行数
     number = false,
     relativenumber = false,
     -- 显示图标
     signcolumn = 'yes',
-    mappings = {
-      list = {
-        { key = '<C-o>', action = 'system_open' },
-        { key = 's', action = nil },
-      },
-    },
   },
   actions = {
     open_file = {

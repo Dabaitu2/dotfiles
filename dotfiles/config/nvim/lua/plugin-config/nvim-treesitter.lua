@@ -5,7 +5,7 @@ if not status then
 end
 
 -- orgmode
-require('orgmode').setup_ts_grammar()
+-- require('orgmode').setup_ts_grammar()
 
 treesitter.setup({
   -- 安装 language parser
@@ -22,7 +22,7 @@ treesitter.setup({
     'rust',
     'vue',
     'toml',
-    'org',
+    -- 'org',
   },
   -- 启用代码高亮模块
   highlight = {

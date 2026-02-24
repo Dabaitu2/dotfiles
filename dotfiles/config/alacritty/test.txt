@@ -1,0 +1,16 @@
+curl --location --request POST 'apm-open3.bytedance.net/api_web/measurement/report/meta_list' \
+--header 'open-api-auth-token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjowLCJhdXRob3JpdHkiOiJUQ0UiLCJwcmltYXJ5QXV0aFR5cGUiOiJwc20iLCJwc20iOiJub3ZlbC5zbGFyZGFyLmJpel9hdXRoIiwidXNlciI6ImFkYWV4LnlhbmciLCJleHBpcmVUaW1lIjoxNzAwNzE4MTc1LCJleHRlbnNpb24iOnsicmVnaW9uIjoiY24tbm9ydGgiLCJzZXJ2aWNlX3R5cGUiOiJmYWFzIiwidG9rZW5fdHlwZSI6ImdkcHIifX0.H55rFjQfUuBrsgl4fHq2OnZgmx1wrk8K0Z39eAG_hGQ-Cp1OX7caf0T2l-hVVtZ_qlRjSjKFPYVOW4YsdOIWdK-iVm0C2w6Js2H1LpbwD24lhGZ6WSpCtKdV9KZnZcg5fr4JAlDxEEoG-nHUyyz7rRPrX4vg1ADh-3BZNWgqZsVSoC_ZchOa8S8K0pWgZaQvvSXgGnXptpnBt4cAzcOlkXFAbH0mYLrF3f9Eqqkqv9FXN8HgoSUgSrbdyA_oaKpeoyoa6nJzf1z2u1uCQhdLoEqPL23e2bhkZw7StTQWtOL7rnPX-G62kX9-zluYxANrhZFABtlpsAFC8uyXs24lxA' \
+--header 'business-key: biz_novel_fe' \
+--header 'Content-Type: application/json' \
+--data '{
+    "period": 7,
+    "start_time": 1699804800,
+    "common": {
+        "platform_id": "novel_fe",
+        "platform_os": "web_org",
+        "platform": "web",
+        "lang": "zh",
+        "env": "",
+        "bid": "novel_pc"
+    }
+}'

@@ -1,3 +1,7 @@
+shell:
+  program: '/bin/zsh'
+selection:
+  save_to_clipboard: true
 colors:
   # Default colors
   primary:
@@ -153,10 +157,11 @@ key_bindings:
   - { key: Back, action: ReceiveChar }
 font:
   normal:
+    # family: "JetbrainsMonoNL Nerd Font"
     family: "JetbrainsMonoNL Nerd Font"
     style: ExtraLight
     # family: "CaskaydiaCove Nerd Font Mono"
-    # style: Regular 
+    # style: Light 
   bold:
     family: "JetbrainsMonoNL Nerd Font"
     # style: Regular
@@ -175,7 +180,7 @@ font:
     # style: Regular Italic
     style: SemiBold Italic
   # 字大小
-  size: 13
+  size: 11
   # use_thin_strokes: true
 
   offset:
@@ -189,10 +194,10 @@ window:
   padding:
     x: 2
     y: 0
-  decorations: "buttonless"
+  decorations: "Buttonless"
   # opacity: 0.95
-  # opacity: 0.85
-  opacity: 0.90
+  opacity: 0.88
+  # opacity: 0.90
   # opacity: 1
   dynamic_padding: true
 

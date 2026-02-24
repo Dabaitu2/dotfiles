@@ -38,5 +38,10 @@ nvim_dev_icon.setup({
       color = '#9d10b0',
       name = 'Racket',
     },
+    ['toml'] = {
+      icon = '',
+      color = '#FF674B',
+      name = 'Toml',
+    },
   },
 })

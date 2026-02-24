@@ -4,8 +4,7 @@ if not status then
   return
 end
 
-hop.setup({
-})
+hop.setup({})
 
 vim.api.nvim_set_keymap('n', '<leader>hw', "<cmd> lua require'hop'.hint_words({})<cr>", {})
 vim.api.nvim_set_keymap('v', '<leader>hw', "<cmd> lua require'hop'.hint_words({})<cr>", {})
